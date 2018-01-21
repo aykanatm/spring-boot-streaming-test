@@ -18,7 +18,7 @@ public class VideoController {
 
     @RequestMapping(value = "video", method = RequestMethod.GET)
     public void getVideo(HttpServletRequest request, HttpServletResponse response){
-        File file = new File("C:\\TestVideos\\BigBuckBunny.mp4");
+        File file = new File("/test-videos/BigBuckBunny.mp4");
         try {
             logger.debug("Streaming file '" + file.getName() + "'...");
             MultipartFileSender.fromFile(file)
@@ -27,9 +27,7 @@ public class VideoController {
                     .serveResource();
         } catch (Exception e) {
             String errorMessage = e.getLocalizedMessage();
-            if(!errorMessage.equalsIgnoreCase("java.io.IOException: An established connection was aborted by the software in your host machine")){
-                logger.error(errorMessage, e);
-            }
+            logger.error(errorMessage, e);
         }
     }
 }
