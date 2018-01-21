@@ -1,3 +1,6 @@
+// Copyright 2013 DAVIN KEVIN
+// URL: https://github.com/davinkevin/Podcast-Server/blob/d927d9b8cb9ea1268af74316cd20b7192ca92da7/src/main/java/lan/dk/podcastserver/utils/multipart/MultipartFileSender.java
+
 package org.murat.test.Utils;
 
 import org.slf4j.Logger;
